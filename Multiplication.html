@@ -340,7 +340,26 @@ document.getElementById("themeToggle").onclick=function(){
     }
 
 };
+document.addEventListener("keydown", function(e) {
 
+    if (e.code === "Space") {
+
+        e.preventDefault();
+
+        if (document.activeElement) {
+            document.activeElement.blur();
+        }
+
+        if (typeof toggleSolution === "function") {
+            toggleSolution();      // Subtraction
+        }
+
+        if (typeof toggleAnswers === "function") {
+            toggleAnswers();       // Multiplication
+        }
+    }
+
+});
 </script>
 
 </body>
